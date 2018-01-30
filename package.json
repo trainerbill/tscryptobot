@@ -9,28 +9,50 @@
     "email": "",
     "url": ""
   },
-  "keywords": [""],
-  "files": ["lib"],
+  "keywords": [
+    ""
+  ],
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
-    "format":
-      "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "prepare": "npm run build",
-    "prebuild":
-      "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
+    "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
     "build": "tsc --pretty",
     "test": "jest",
     "coverage": "jest --coverage",
     "watch": "npm run build -- --watch",
-    "watch:test": "jest --watch"
+    "watch:test": "jest --watch",
+    "start": "node -r dotenv/config lib/index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ccxt": "^1.10.902",
+    "dotenv": "^4.0.0",
+    "joi": "^13.1.1",
+    "later": "^1.2.0",
+    "lodash": "^4.17.4",
+    "lowdb": "^1.0.0",
+    "moment": "^2.20.1",
+    "object-hash": "^1.2.0",
+    "superagent": "^3.8.2",
+    "technicalindicators": "^1.1.1",
+    "yargs": "^11.0.0"
+  },
   "devDependencies": {
     "@types/jest": "^22.0.1",
+    "@types/later": "^1.2.4",
+    "@types/lodash": "^4.14.98",
+    "@types/lowdb": "^1.0.0",
+    "@types/moment": "^2.13.0",
     "@types/node": "^8.0.0",
+    "@types/object-hash": "^1.1.0",
+    "@types/superagent": "^3.5.7",
+    "@types/yargs": "^10.0.1",
     "coveralls": "^2.0.0",
     "jest": "^22.0.4",
     "jest-environment-node-debug": "^2.0.0",
@@ -50,7 +72,10 @@
       ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
-    "moduleFileExtensions": ["ts", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
     "testEnvironment": "node",
     "mapCoverage": true
   }

@@ -7,6 +7,29 @@
     {
       "type": "node",
       "request": "launch",
+      "name": "Launch",
+      "program": "${workspaceRoot}/lib/index.js",
+      "args": [
+        "fetch",
+        "--exchange=binance",
+        "--asset=TRX",
+        "--currency=BTC",
+      ],
+      "runtimeArgs": [
+        "-r",
+        "dotenv/config"
+      ],
+      "cwd": "${workspaceRoot}",
+      "sourceMaps": true,
+      "smartStep": true,
+      "preLaunchTask": "build",
+      "outFiles": [
+        "${workspaceRoot}/lib/*.js"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
       "name": "Debug file",
       "program": "${workspaceRoot}/lib/${fileBasenameNoExtension}.js",
       "cwd": "${workspaceRoot}",
