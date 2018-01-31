@@ -1,7 +1,8 @@
+/*
 import * as moment from 'moment';
 import * as querystring from 'querystring';
 import * as superagent from 'superagent';
-import { Exchange, IExchangeConfig, Trade } from '../classes';
+import { Exchange, IExchangeConfig, Trade } from '../../classes';
 
 export class Binance extends Exchange {
   public static config: IExchangeConfig = {
@@ -50,3 +51,4 @@ export class Binance extends Exchange {
     }
   }
 }
+*/

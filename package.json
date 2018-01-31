@@ -31,6 +31,7 @@
     "start": "node -r dotenv/config lib/index.js"
   },
   "dependencies": {
+    "binance-api-node": "^0.5.5",
     "ccxt": "^1.10.902",
     "dotenv": "^4.0.0",
     "joi": "^13.1.1",
@@ -41,10 +42,13 @@
     "object-hash": "^1.2.0",
     "superagent": "^3.8.2",
     "technicalindicators": "^1.1.1",
+    "winston": "^2.4.0",
+    "ws": "^4.0.0",
     "yargs": "^11.0.0"
   },
   "devDependencies": {
     "@types/jest": "^22.0.1",
+    "@types/joi": "^13.0.5",
     "@types/later": "^1.2.4",
     "@types/lodash": "^4.14.98",
     "@types/lowdb": "^1.0.0",
@@ -52,6 +56,8 @@
     "@types/node": "^8.0.0",
     "@types/object-hash": "^1.1.0",
     "@types/superagent": "^3.5.7",
+    "@types/winston": "^2.3.7",
+    "@types/ws": "^4.0.0",
     "@types/yargs": "^10.0.1",
     "coveralls": "^2.0.0",
     "jest": "^22.0.4",

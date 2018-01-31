@@ -1,3 +1,4 @@
+/*
 import * as moment from 'moment';
 import { Exchange } from './exchange';
 import { TradeFetcher } from './tradeFetcher';
@@ -23,3 +24,4 @@ export class TradeImporter extends TradeFetcher {
     this._startTime = moment(time).utc();
   }
 }
+*/

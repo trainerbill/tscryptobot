@@ -1,3 +1,4 @@
+/*
 import { sortBy } from 'lodash';
 import * as lowdb from 'lowdb';
 // tslint:disable-next-line:no-submodule-imports
@@ -95,3 +96,4 @@ export class TradeFetcher extends Scheduler {
     });
   }
 }
+*/

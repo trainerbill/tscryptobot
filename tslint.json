@@ -5,7 +5,6 @@
   ],
   "rules": {
     "variable-name": [true, "allow-leading-underscore"],
-    "object-literal-sort-keys": [true],
-    "no-console": [false]
+    "object-literal-sort-keys": [true]
   }
 }

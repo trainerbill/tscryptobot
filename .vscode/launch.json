@@ -10,10 +10,12 @@
       "name": "Launch",
       "program": "${workspaceRoot}/lib/index.js",
       "args": [
-        "fetch",
+        "market",
         "--exchange=binance",
         "--asset=TRX",
         "--currency=BTC",
+        "--depth=20",
+        "--logLevel=silly"
       ],
       "runtimeArgs": [
         "-r",
@@ -25,7 +27,8 @@
       "preLaunchTask": "build",
       "outFiles": [
         "${workspaceRoot}/lib/*.js"
-      ]
+      ],
+      "console": "integratedTerminal"
     },
     {
       "type": "node",

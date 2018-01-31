@@ -1,5 +1,5 @@
+import * as winston from 'winston';
 import * as yargs from 'yargs';
-import { TradeFetcher } from './classes';
 import * as exchanges from './exchanges';
 
 const argv = yargs
@@ -10,7 +10,34 @@ const argv = yargs
   .command('import', 'import trade data', cyargs => {
     return cyargs.demandOption(['start', 'asset', 'currency', 'exchange']);
   })
+  .command('market', 'market making', cyargs => {
+    return cyargs.demandOption(['asset', 'currency', 'exchange', 'depth']);
+  })
+  .option('logLevel', {
+    default: process.env.NODE_ENV === 'production' ? 'error' : 'info',
+  })
   .demandCommand().argv;
+
+winston.default.transports.console.level = argv.logLevel;
+// const console = new ();
+// winston.add(winston.transports.Console);
+
+switch (argv._[0]) {
+  case 'market':
+    const marketmaker = new exchanges.BinanceMarketMaker(
+      argv.asset,
+      argv.currency,
+      argv.depth
+    );
+    marketmaker.init();
+    break;
+
+  default:
+    winston.error(`${argv._[0]} command not implemented yet`);
+    process.exit();
+}
+
+/*
 
 let exchange = new exchanges.Binance();
 switch (argv.exchange) {
@@ -19,7 +46,7 @@ switch (argv.exchange) {
     break;
 
   default:
-    console.error(`${argv.exchange} is not setup`);
+    winston.error(`${argv.exchange} is not setup`);
     process.exit(1);
     break;
 }
@@ -33,7 +60,6 @@ switch (argv._[0]) {
   case 'import':
     switch (argv.exchange) {
       case 'binance':
-      /*
         const importer = new TradeImporter(
           exchange,
           argv.start,
@@ -42,7 +68,7 @@ switch (argv._[0]) {
         );
         importer.start();
         break;
-      */
     }
     break;
 }
+*/
